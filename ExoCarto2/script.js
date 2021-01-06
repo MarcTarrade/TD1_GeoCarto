@@ -25,5 +25,9 @@ function successPos(position){
     console.log(position);
 }
 
-navigator.geolocation.getCurrentPosition(successPos);
-navigator.geolocation.watchPosition(successWatch)
+function erreur(err){
+    console.warn(err);
+}
+
+navigator.geolocation.getCurrentPosition(successPos, erreur);
+navigator.geolocation.watchPosition(successWatch, erreur);
