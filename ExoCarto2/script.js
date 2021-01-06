@@ -22,7 +22,6 @@ function successPos(position){
     else{
         document.getElementById("vitesse").innerHTML = position.coords.speed;
     }
-    document.getElementById("timeStamp").innerHTML = position.timestamp;
     console.log(position);
 }
 
