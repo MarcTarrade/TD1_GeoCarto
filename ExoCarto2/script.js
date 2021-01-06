@@ -1,2 +1,2 @@
 var position = navigator.geolocation.getCurrentPosition();
-console.log(position.latitude);
+console.log(position.coords.latitude);
