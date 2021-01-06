@@ -1,7 +1,7 @@
 if(window.DeviceOrientationEvent && window.DeviceMotionEvent){
     window.addEventListener("deviceorientation", successOrientation);
     window.addEventListener("devicemotion", successMotion);
-    document.getElementById("support").innerHTML = "Votre support prend en charge l'orientation et la rotation";
+    console.log("OK");
 }
 
 function successOrientation(orientation){
