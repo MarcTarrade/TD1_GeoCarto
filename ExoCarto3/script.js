@@ -3,6 +3,9 @@ if(window.DeviceOrientationEvent && window.DeviceMotionEvent){
     window.addEventListener("devicemotion", successMotion);
     console.log("OK");
 }
+else{
+    document.body.innerHTML = "Pas supporté";
+}
 
 function successOrientation(orientation){
     document.getElementById("alphaO").innerHTML = orientation.alpha;
