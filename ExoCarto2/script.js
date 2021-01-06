@@ -12,7 +12,7 @@ function successWatch(position){
     console.log(position);
 }
 
-function successPos(){
+function successPos(position){
     document.getElementById("latitude").innerHTML = position.coords.latitude;
     document.getElementById("longitude").innerHTML = position.coords.longitude;
     document.getElementById("precision").innerHTML = position.coords.accuracy;
@@ -25,5 +25,6 @@ function successPos(){
     document.getElementById("timeStamp").innerHTML = position.timestamp;
     console.log(position);
 }
+
 navigator.geolocation.getCurrentPosition(successPos);
 navigator.geolocation.watchPosition(successWatch)
