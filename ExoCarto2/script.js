@@ -1,4 +1,8 @@
-function success(position){
-    console.log(position.coords);
+function successPos(position){
+    document.getElementById("latitude").innerHTML = position.coords.latitude;
+    document.getElementById("longitude").innerHTML = position.coords.longitude;
+    document.getElementById("precision").innerHTML = position.coords.accuracy;
+    document.getElementById("vitesse").innerHTML = position.coords.speed;
+    document.getElementById("timeStamp").innerHTML = position.timestamp;
 }
-navigator.geolocation.getCurrentPosition(success);
+navigator.geolocation.watchPosition(successPos);
