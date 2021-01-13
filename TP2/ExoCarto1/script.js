@@ -15,5 +15,5 @@ navigator.geolocation.getCurrentPosition(function(pos){
         accessToken: 'pk.eyJ1IjoibWFyY3RhcnJhZGUiLCJhIjoiY2tqdjZ1OXdzMDVqejJubHM5ajQwZWwwOSJ9.jTuNz4pkBKO06JCKcub2fA'
     }).addTo(maMap);
     let coordsNice = [43.705759, 7.262399];
-    var marker = L.marker(coordsNice).addTo(maMap)
+    var marker = L.marker(coordsNice).addTo(maMap);
 });
