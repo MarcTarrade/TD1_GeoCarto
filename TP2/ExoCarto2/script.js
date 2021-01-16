@@ -32,4 +32,14 @@ navigator.geolocation.getCurrentPosition(function(pos){
         radius: accuracy
     }).addTo(stamen);
     circle.bindPopup("Cercle autour de ma position");
+
+    let latitudeMarseille = 43.291067;
+    let longitudeMarseille = 5.376757;
+    let R = 6371;
+    var res = 2 * R * Math.asin(Math.sqrt(Math.pow(Math.sin((latitude * latitudeMarseille) / 2), 2) 
+    + Math.cos(latitudeMarseille) * Math.cos(latitude) * Math.pow(Math.sin((longitude * longitudeMarseille) / 2), 2)));
+    document.getElementById("distance").innerHTML = res;
+
+    var trajet = L.polygon([[latitude, longitude], [latitudeMarseille, longitudeMarseille]], {color:'blue'}).addTo(stamen);
+    trajet.bindPopup("Distance position - Marseille");
 });
