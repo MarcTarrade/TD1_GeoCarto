@@ -12,10 +12,14 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 }).addTo(maMap);
 
 $.ajax({
-    type: "GET",
-    dataType: 'json',
-    url: "https://opendata.nicecotedazur.org/data/storage/f/2020-02-03T14%3A09%3A34.406Z/signca-ec-voies-velo.geojson",
-    crossDomain : true,
+    
+    "dataType": 'json',
+    "url": "https://opendata.nicecotedazur.org/data/storage/f/2020-02-03T14%3A09%3A34.406Z/signca-ec-voies-velo.geojson",
+    "crossDomain": true,
+    "headers": {
+            "accept": "application/json",
+            'Access-Control-Allow-Origin': '*'
+        }
 })
     .done(function( data ) {
         L.geoJson(data, {
