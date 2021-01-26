@@ -24,5 +24,24 @@ function draw(){
         dessin.fill();
     }
     img.src = "Minas_Tirith.jpg";
-    
 }
+
+document.getElementById("soleil").addEventListener("click", function(){
+    var ciel = document.getElementById("ciel");
+    if(ciel.style.fill == "blue"){
+        ciel.style.fill = "lightblue"
+    }
+    else{
+        ciel.style.fill = "blue";
+    }
+})
+
+document.getElementById("porte").addEventListener("mouseover", function(){
+    var porte = document.getElementById("porte");
+    porte.style.fill = "purple";
+})
+
+document.getElementById("porte").addEventListener("mouseout", function(){
+    var porte = document.getElementById("porte");
+    porte.style.fill = "maroon";
+})
