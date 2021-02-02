@@ -46,7 +46,6 @@ var xmlhttp = new XMLHttpRequest();
 xmlhttp.addEventListener("load", function(){
     var json = JSON.parse(this.responseText);
 
-    var mat;
     var geo;
     var texture;
     var mark;
@@ -54,12 +53,15 @@ xmlhttp.addEventListener("load", function(){
     for (let i = 0; i < json.length; i++) {
         //json[i].flag
         //json[i].latlng
-        var position = toCartesien(json[i].latlng[0], json[i].latlng[0]);
+        var position = toCartesien(json[i].latlng[0], json[i].latlng[1]);
 
         //Marqueur
         geo = new THREE.SphereGeometry(0.01, 32, 32);
-        mat = new THREE.MeshBasicMaterial( { color: 0xff0000 } );
-        mark = new THREE.Mesh( geo, mat );
+        texture = new THREE.TextureLoader().load( json[i].flag );
+
+        // immediately use the texture for material creation
+        material = new THREE.MeshBasicMaterial( { map: texture } );
+        mark = new THREE.Mesh( geo, material );
         mark.position.set(position[0], position[1], position[2]);
         scene.add( mark );
     }
