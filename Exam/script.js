@@ -33,6 +33,7 @@ function drawCanvas(angle){
             dessin.translate(100, 100);
             dessin.rotate(angle * (Math.PI / 180));
             dessin.translate(-100, -100);
+            dessin.clearRect(0, 0, 200, 200);
             dessin.drawImage(fleche, 0, 0);
         }
         fleche.src = "needle.png"
