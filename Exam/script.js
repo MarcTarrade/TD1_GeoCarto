@@ -26,9 +26,11 @@ function drawCanvas(angle){
         dessin.drawImage(bousole, 0, 0);
         var fleche = new Image();
         fleche.onload = function(){
-            dessin.beginPath();
             dessin.drawImage(fleche, 0, 0);
-            fleche.rotate(angle * Math.PI / 180);
+            dessin.translate(100, 100);
+            dessin.rotate(angle * Math.PI / 180);
+            dessin.translate(-100, -100);
+            
         }
         fleche.src = "needle.png"
     }
