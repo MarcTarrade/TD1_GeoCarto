@@ -26,14 +26,12 @@ function drawCanvas(angle){
     var dessin = canvas.getContext("2d");
     var boussole = new Image();
     boussole.onload = function(){
-        dessin.clearRect(0, 0, 200, 200);
         dessin.drawImage(boussole, 0, 0);
         var fleche = new Image();
         fleche.onload = function(){
             dessin.translate(100, 100);
             dessin.rotate(angle * (Math.PI / 180));
             dessin.translate(-100, -100);
-            dessin.clearRect(0, 0, 200, 200);
             dessin.drawImage(fleche, 0, 0);
         }
         fleche.src = "needle.png"
