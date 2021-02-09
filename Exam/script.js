@@ -13,9 +13,8 @@ navigator.geolocation.getCurrentPosition(function(pos){
         accessToken: 'pk.eyJ1IjoibWFyY3RhcnJhZGUiLCJhIjoiY2tqdjZ1OXdzMDVqejJubHM5ajQwZWwwOSJ9.jTuNz4pkBKO06JCKcub2fA'
     }).addTo(maMap);
     window.addEventListener("deviceorientation", function(device){
-        document.getElementById("text").innerHTML = device.alpha;
-    drawCanvas(device.alpha);
-    rotateSvg(device.alpha)
+        drawCanvas(device.alpha);
+        rotateSvg(device.alpha)
     })
 });
 
@@ -39,7 +38,6 @@ function drawCanvas(angle){
 }
 
 function rotateSvg(angle){
-    var boussole = document.getElementById("boussole");
     var fleche = document.getElementById("fleche");
 
     fleche.setAttribute("transform", "translate(100, 100) rotate(" + angle + ") translate(-100, -100)")
