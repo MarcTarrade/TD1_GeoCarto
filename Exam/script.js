@@ -28,7 +28,7 @@ function drawCanvas(angle){
         fleche.onload = function(){
             dessin.beginPath();
             dessin.drawImage(fleche, 0, 0);
-            dessin.rotate(angle * Math.PI / 180);
+            fleche.rotate(angle * Math.PI / 180);
         }
         fleche.src = "needle.png"
     }
