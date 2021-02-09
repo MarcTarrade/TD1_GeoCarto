@@ -13,9 +13,9 @@ navigator.geolocation.getCurrentPosition(function(pos){
         accessToken: 'pk.eyJ1IjoibWFyY3RhcnJhZGUiLCJhIjoiY2tqdjZ1OXdzMDVqejJubHM5ajQwZWwwOSJ9.jTuNz4pkBKO06JCKcub2fA'
     }).addTo(maMap);
     window.addEventListener("deviceorientation", function(device){
-    drawCanvas(device.beta);
-})
-    
+        document.getElementById("text").innerHTML = device.alpha;
+    drawCanvas(device.alpha);
+    })
 });
 
 function drawCanvas(angle){
