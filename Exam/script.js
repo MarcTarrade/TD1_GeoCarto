@@ -12,6 +12,7 @@ navigator.geolocation.getCurrentPosition(function(pos){
         zoomOffset: -1,
         accessToken: 'pk.eyJ1IjoibWFyY3RhcnJhZGUiLCJhIjoiY2tqdjZ1OXdzMDVqejJubHM5ajQwZWwwOSJ9.jTuNz4pkBKO06JCKcub2fA'
     }).addTo(maMap);
+    
     window.addEventListener("deviceorientation", function(device){
         drawCanvas(device.alpha);
         rotateSvg(device.alpha)
@@ -28,7 +29,7 @@ function drawCanvas(angle){
         fleche.onload = function(){
             dessin.drawImage(fleche, 0, 0);
             dessin.translate(100, 100);
-            dessin.rotate((Math.PI / 180) * angle);
+            dessin.rotate(angle * Math.PI / 180);
             dessin.translate(-100, -100);
             
         }
@@ -42,3 +43,11 @@ function rotateSvg(angle){
 
     fleche.setAttribute("transform", "translate(100, 100) rotate(" + angle + ") translate(-100, -100)")
 }
+
+var map = new L.Map('map', {zoom: 12, center: new L.latLng([42.5,12.5]) });
+
+	map.addLayer(new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'));
+
+	var comp = new L.Control.Compass({autoActive: true, showDigit:true});
+
+	map.addControl(comp);
