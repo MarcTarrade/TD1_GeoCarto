@@ -17,7 +17,6 @@ navigator.geolocation.getCurrentPosition(function(pos){
     drawCanvas(device.alpha);
     })
 });
-drawCanvas(350);
 
 function drawCanvas(angle){
     var canvas = document.getElementById("canvas");
