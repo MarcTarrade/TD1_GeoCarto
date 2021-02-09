@@ -15,15 +15,16 @@ navigator.geolocation.getCurrentPosition(function(pos){
     window.addEventListener("deviceorientation", function(device){
         document.getElementById("text").innerHTML = device.alpha;
     drawCanvas(device.alpha);
+    rotateSvg(device.alpha)
     })
 });
 
 function drawCanvas(angle){
     var canvas = document.getElementById("canvas");
     var dessin = canvas.getContext("2d");
-    var bousole = new Image();
-    bousole.onload = function(){
-        dessin.drawImage(bousole, 0, 0);
+    var boussole = new Image();
+    boussole.onload = function(){
+        dessin.drawImage(boussole, 0, 0);
         var fleche = new Image();
         fleche.onload = function(){
             dessin.drawImage(fleche, 0, 0);
@@ -34,9 +35,12 @@ function drawCanvas(angle){
         }
         fleche.src = "needle.png"
     }
-    bousole.src = "compass.png";
+    boussole.src = "compass.png";
 }
 
-function drawSvg(){
+function rotateSvg(angle){
+    var boussole = document.getElementById("boussole");
+    var fleche = document.getElementById("fleche");
 
+    fleche.setAttribute("transform", "translate(100, 100) rotate(" + angle + ") translate(-100, -100)")
 }
