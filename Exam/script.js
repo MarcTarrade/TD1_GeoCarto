@@ -26,6 +26,7 @@ function drawCanvas(angle){
         dessin.drawImage(bousole, 0, 0);
         var fleche = new Image();
         fleche.onload = function(){
+            dessin.beginPath();
             dessin.drawImage(fleche, 0, 0);
             dessin.rotate(angle * Math.PI / 180);
         }
