@@ -28,7 +28,7 @@ function drawCanvas(angle){
         fleche.onload = function(){
             dessin.drawImage(fleche, 0, 0);
             dessin.translate(100, 100);
-            dessin.rotate(angle * Math.PI / 180);
+            dessin.rotate((Math.PI / 180) * angle);
             dessin.translate(-100, -100);
             
         }
