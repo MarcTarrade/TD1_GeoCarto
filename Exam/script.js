@@ -19,6 +19,8 @@ navigator.geolocation.getCurrentPosition(function(pos){
     })
 });
 
+//CANVAS
+
 function drawCanvas(angle){
     var canvas = document.getElementById("canvas");
     var dessin = canvas.getContext("2d");
@@ -27,22 +29,25 @@ function drawCanvas(angle){
         dessin.drawImage(boussole, 0, 0);
         var fleche = new Image();
         fleche.onload = function(){
-            dessin.drawImage(fleche, 0, 0);
             dessin.translate(100, 100);
             dessin.rotate(angle * (Math.PI / 180));
             dessin.translate(-100, -100);
-            
+            dessin.drawImage(fleche, 0, 0);
         }
         fleche.src = "needle.png"
     }
     boussole.src = "compass.png";
 }
 
+//SVG
+
 function rotateSvg(angle){
     var fleche = document.getElementById("fleche");
 
     fleche.setAttribute("transform", "translate(100, 100) rotate(" + angle + ") translate(-100, -100)")
 }
+
+//LEAFLET
 
 var map = new L.Map('map', {zoom: 12, center: new L.latLng([42.5,12.5]) });
 
