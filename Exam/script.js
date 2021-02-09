@@ -26,6 +26,7 @@ function drawCanvas(angle){
     var dessin = canvas.getContext("2d");
     var boussole = new Image();
     boussole.onload = function(){
+        dessin.clearRect(0, 0, 200, 200);
         dessin.drawImage(boussole, 0, 0);
         var fleche = new Image();
         fleche.onload = function(){
